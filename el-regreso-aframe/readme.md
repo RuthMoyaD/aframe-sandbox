@@ -26,5 +26,5 @@ This is my **first project** combining Twine and A-Frame — if you're curious, 
 
 ---
 
-**Created by:** *[Ruth Moya]*  
+**Created by:** *Ruth Moya*  
 

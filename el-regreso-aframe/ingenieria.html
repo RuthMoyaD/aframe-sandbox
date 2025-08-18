@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Engineering</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
+    <script>
+        AFRAME.registerComponent('vertical-movement', {
+            init: function () {
+                this.speed = 0.1;
+                this.keys = {};
+
+                window.addEventListener('keydown', (e) => {
+                    this.keys[e.key.toLowerCase()] = true;
+                });
+                window.addEventListener('keyup', (e) => {
+                    this.keys[e.key.toLowerCase()] = false;
+                });
+            },
+
+            tick: function () {
+                const el = this.el;
+                const position = el.object3D.position;
+
+                if (this.keys['r']) {
+                    position.y += this.speed;
+                }
+                if (this.keys['f']) {
+                    position.y -= this.speed;
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+   <a-scene environment="preset: forest; lightIntensity: 1.2; lightPosition: 0 5 0">
+  <a-entity light="type: ambient; intensity: 1.2"></a-entity>
+  <a-entity light="type: directional; intensity: 1.2" position="0 5 5"></a-entity>
+  
+<a-assets timeout="20000">
+  <img id="fondo" src="img/ingenieria redux.webp">
+
+  <a-asset-item id="modelo" src="glb/Modelo Puzzle 2.glb"></a-asset-item>
+</a-assets>
+
+<a-sky src="#fondo" rotation="0 -90 0"></a-sky>
+
+<a-entity id="objeto" 
+          class="clickable" 
+          gltf-model="#modelo" 
+          position="0 0 0" 
+          scale="0.7 0.7 0.7">
+</a-entity>
+
+
+    <a-entity position="0 6 -6">
+      <a-plane 
+        width="7" 
+        height="2.1" 
+        color="#39FF14" 
+        opacity="0.7" 
+        material="shader: flat; emissive: #39FF14; emissiveIntensity: 3;">
+      </a-plane>
+
+      <a-plane 
+        width="6.6" 
+        height="2" 
+        color="#000" 
+        opacity="0.9" 
+        material="shader: flat; transparent: true;">
+      </a-plane>
+
+      <a-text 
+        value="Click y arrastra para girar.\nUsa las flechas \no WASD para moverte.\n'R' para subir, 'F' para bajar." 
+        align="center" 
+        color="#FFF" 
+        width="10" 
+        position="0 0 0.01">
+      </a-text>
+    </a-entity>
+
+    <a-entity id="cameraRig" 
+          camera 
+          position="0 1.2 5" 
+          wasd-controls 
+          look-controls 
+          vertical-movement>
+</a-entity>
+  </a-scene>
+    
+</body>
+</html>

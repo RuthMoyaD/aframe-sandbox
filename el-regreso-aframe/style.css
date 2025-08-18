@@ -1,0 +1,42 @@
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #001f3f, #003366, #001f4d);
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+      gap: 80px;
+    }
+    .sphere {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #0088ff, #001933 70%);
+      box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(0, 255, 255, 0.4),
+        inset 0 0 30px rgba(255, 255, 255, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .sphere:hover {
+      transform: scale(1.1);
+      box-shadow: 
+        0 0 30px rgba(255, 255, 255, 1),
+        0 0 60px rgba(0, 255, 255, 0.7),
+        inset 0 0 40px rgba(255, 255, 255, 0.4);
+    }

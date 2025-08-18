@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Activation</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+</head>
+<body>
+   <a-scene environment="preset: forest; lightIntensity: 0.7; lightPosition: 0 5 0">
+    <a-entity light="type: ambient; intensity: 1.2"></a-entity>
+  <a-entity light="type: directional; intensity: 1.2" position="0 5 5"></a-entity>
+  
+<a-assets timeout="20000">
+  <img id="fondo" src="img/activation web redux.webp">
+
+  <a-asset-item id="modelo" src="glb/Modelo Puzzle 1.glb"></a-asset-item>
+</a-assets>
+
+<a-sky src="#fondo" rotation="0 -90 0"></a-sky>
+
+<a-entity id="objeto" 
+          class="clickable" 
+          gltf-model="#modelo" 
+          position="0 -0.5 2" 
+          scale="2 2 2">
+</a-entity>
+
+    <a-entity position="0 7 -6">
+      <a-plane 
+        width="7" 
+        height="2.1" 
+        color="#39FF14" 
+        opacity="0.7" 
+        material="shader: flat; emissive: #39FF14; emissiveIntensity: 3;">
+      </a-plane>
+
+      <a-plane 
+        width="6.6" 
+        height="2" 
+        color="#000" 
+        opacity="0.9" 
+        material="shader: flat; transparent: true;">
+      </a-plane>
+
+      <a-text 
+        value="Click para girar el objeto.\nUsa las flechas \no WASD para moverte" 
+        align="center" 
+        color="#FFF" 
+        width="10" 
+        position="0 0 0.01">
+      </a-text>
+    </a-entity>
+
+    <a-entity id="cameraRig" 
+          camera 
+          position="0 1.2 5" 
+          wasd-controls>
+</a-entity>
+  </a-scene>
+    <script src="script.js"></script>
+</body>
+</html>

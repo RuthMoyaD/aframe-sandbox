@@ -20,7 +20,6 @@ The project links Twine passages to full A-Frame HTML pages containing all asset
 ## 🚀 Try the Game
 
 👉 [**Play Now**](#)  
-*_(Link will be added once the project is live)_*
 
 This is my **first project** combining Twine and A-Frame — if you're curious, give it a try! Feedback is very welcome.
 

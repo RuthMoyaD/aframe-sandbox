@@ -1,6 +1,6 @@
 # 🌍 Save the Earth – A Twine + A-Frame Experimental Game
 
-This is a short **experimental web-based game** combining [Twine](https://twinery.org/) for interactive storytelling and [A-Frame](https://aframe.io/) for 3D scenes rendered directly in the browser.
+This is a short **experimental web-based game** I created as a final project for my Interactive Narratives and VR course, combining [Twine](https://twinery.org/) for interactive storytelling and [A-Frame](https://aframe.io/) for 3D scenes rendered directly in the browser.
 
 ## 🦠 Story
 
